@@ -141,7 +141,7 @@ var controller;
 
 $(document).ready(function() {
   controller = $("#console").console({
-    welcomeMessage:'Give me some Clojure:',
+    welcomeMessage: "Let's link some data:",
     promptLabel: '> ',
     commandValidate: onValidate,
     commandHandle: onHandle,
