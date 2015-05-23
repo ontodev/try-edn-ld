@@ -18,7 +18,6 @@ body {
 #header h1 {
   height: 72px;
   line-height: 72px;
-  background: url(../clojure-logo.png) no-repeat;
   padding: 0px 0px 0px 80px;
   font-weight: normal;
   font-size: 36px;
@@ -114,12 +113,18 @@ body {
 
 #changer {
   line-height: 1.3em;
-  padding: 20px;
+  padding: 5px 20px 10px 20px;
   background: #D6DADD;
   margin-bottom: 10px;
 }
 
-#changer p {
+#hints {
+  line-height: 1.3em;
+  padding: 10px 20px 10px 20px;
+  background: #D6DADD;
+}
+
+#changer p, #hints p {
     margin: 0.6em;
 }
 
@@ -131,7 +136,7 @@ body {
   color: #60749E;
 }
 
-#changer code {
+#changer code, #hints code {
   background-color: #eee;
   border: 1px solid #aaa;
   color: #555;
@@ -142,7 +147,19 @@ body {
 #changer ul {
   margin: 0px;
   padding: 0px;
-  list-style: none;
+}
+
+#changer table {
+  color: #555;
+  background-color: #eee;
+  border: 1px solid #aaa;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5em;
+}
+
+#changer td {
+  padding: 0.2em;
 }
 
 #tuttext {
@@ -161,6 +178,11 @@ body {
 /* Coderay alpha style */
 code {
   display: inline-block;
+}
+
+pre {
+  overflow: auto;
+  max-width: 100%;
 }
 
 .code {

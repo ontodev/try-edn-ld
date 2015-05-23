@@ -1,4 +1,33 @@
-<p>
-  Now, that was a bit surprising: Clojure has a built in Rational type.
-  You can still force Clojure to do floating point division by making one of the operands floating point: type <code class="expr">(/ 10 3.0)</code> to continue.
-</p>
+<h2 id="names">Names</h2>
+<p>We have the data in a convenient shape, but what does it mean? Well, there's some resource that has &quot;The Iliad&quot; as its title, and some guy named &quot;Homer&quot; who is the author of that resource. We also know from the context that it's a book.</p>
+<p>The first thing to do is give names to our resources. Linked data names are <a href="https://en.wikipedia.org/wiki/Internationalized_resource_identifier">IRIs</a>: globally unique identifiers that generalize the familiar URL you see in your browser's location bar. We can use some standard names for our relations from the <a href="http://dublincore.org">Dublin Core</a> metadata standard, and we'll make up some more.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">IRI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">title</td>
+<td align="left"><code>http://purl.org/dc/elements/1.1/title</code></td>
+</tr>
+<tr class="even">
+<td align="left">author</td>
+<td align="left"><code>http://purl.org/dc/elements/1.1/author</code></td>
+</tr>
+<tr class="odd">
+<td align="left">The Iliad</td>
+<td align="left"><code>http://example.com/the-iliad</code></td>
+</tr>
+<tr class="even">
+<td align="left">Homer</td>
+<td align="left"><code>http://example.com/Homer</code></td>
+</tr>
+<tr class="odd">
+<td align="left">book</td>
+<td align="left"><code>http://example.com/book</code></td>
+</tr>
+</tbody>
+</table>

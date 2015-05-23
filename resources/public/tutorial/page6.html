@@ -1,8 +1,9 @@
-<p>
-  That's enough math. Let's do some fun stuff, like defining functions.
-  You can do that in Clojure with <code>defn</code>.
-</p>
-
-<p>
-  Type <code class="expr">(defn square [x] (* x x))</code> to define a "square" function that takes a single number and squares it.
-</p>
+<h2 id="context">Context</h2>
+<p>We'll put this naming information in a <em>context</em> map:</p>
+<pre><code>&gt; (def context {:dc &quot;http://purl.org/dc/elements/1.1/&quot;, :ex &quot;http://example.com/&quot;, nil :ex, :title :dc:title, :author :dc:author})</code></pre>
+<p>The <code>nil</code> key indicates the default prefix <code>:ex</code>. Now we can use the context to expand contractions and to contract IRIs:</p>
+<pre><code>&gt; (expand context :title)
+&gt; (expand context :Homer)
+&gt; (contract context &quot;http://purl.org/dc/elements/1.1/title&quot;)
+&gt; (contract context &quot;http://purl.org/dc/elements/1.1/foo&quot;)
+&gt; (expand-all context data)</code></pre>

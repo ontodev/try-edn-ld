@@ -2,9 +2,11 @@
   (:require [clojail.testers :refer [secure-tester-without-def blanket]]
             [clojail.core :refer [sandbox]]
             [clojure.stacktrace :refer [root-cause]]
-            [noir.session :as session])
+            [noir.session :as session]
+            edn-ld.core
+            edn-ld.demo)
   (:import java.io.StringWriter
-	   java.util.concurrent.TimeoutException))
+           java.util.concurrent.TimeoutException))
 
 (defn eval-form [form sbox]
   (with-open [out (StringWriter.)]
@@ -22,7 +24,11 @@
 (defn make-sandbox []
   (sandbox try-clojure-tester
            :timeout 2000
-           :init '(do (require '[clojure.repl :refer [doc source]])
+           :init '(do (require '[clojure.repl :refer [doc source]]
+                               '[clojure.string :as string]
+                               '[edn-ld.core :refer :all]
+                               '[edn-ld.common :refer :all]
+                               '[edn-ld.demo :refer :all])
                       (future (Thread/sleep 600000)
                               (-> *ns* .getName remove-ns)))))
 

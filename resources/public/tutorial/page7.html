@@ -1,13 +1,10 @@
-<p>Congratulations - you just defined your first Clojure function. Many more will follow!</p>
-
-<p>
-  <code>defn</code> takes the name of the function, then the list of arguments, and then the body of the function.
-  I told you that a Clojure program is made of lists, right?
-  The entire <code>defn</code> is a list, and the function body is also a list.
-  (Even the arguments are collected in a vector, which is similar to a list - we'll talk about vectors soon).
-</p>
-
-<p>
-  Oh, sorry for talking so long - you probably want to try out your brand new function!
-  Type <code class="expr">(square 10)</code>.
-</p>
+<h2 id="resources">Resources</h2>
+<p>Sometimes we also want to <em>resolve</em> a name to an IRI. We can define a resources map from string to IRIs or contractions:</p>
+<pre><code>&gt; (def resources {&quot;Homer&quot; :Homer, &quot;The Iliad&quot; :the-iliad})
+&gt; resources</code></pre>
+<p>We should include this information in our data by assigning a special <code>:subject-iri</code> to each of our maps. We can do this one at a time with <code>assoc</code>:</p>
+<pre><code>&gt; (def book (assoc (first data) :subject-iri :the-iliad))
+&gt; book</code></pre>
+<p>Or we can use a higher-order function to find the title from the resources map:</p>
+<pre><code>&gt; (def books (mapv #(assoc % :subject-iri (get resources (:title %))) data))
+&gt; books</code></pre>

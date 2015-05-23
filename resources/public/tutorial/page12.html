@@ -1,0 +1,14 @@
+<h2 id="named-graphs">Named Graphs</h2>
+<p>One more thing before we're done: <em>named graphs</em>. A graph is just a set of triples. When we want to talk about a particular graph, we give it a name: an IRI, of course. Then we can talk about sets of named graphs when we want to compare them, merge them, etc. The official name for a set of graphs is an &quot;<a href="http://www.w3.org/TR/rdf11-concepts/#section-dataset">RDF dataset</a>&quot;. A dataset includes &quot;default graph&quot; with no name.</p>
+<p>By adding the name of a graph, our <em>triples</em> become <em>quads</em> (&quot;quadruples&quot;). We define a quad and some new functions to handle them.</p>
+<pre><code>&gt; (def library [(assoc book :graph-iri :library)])
+#&#39;user/library
+&gt; library
+[{:title &quot;The Iliad&quot;, :author &quot;Homer&quot;, :subject-iri :the-iliad, :graph-iri :library}]
+&gt; (def quads (quadruplify-all resources library))
+#&#39;user/quads
+&gt; (vec quads)
+[[:library :the-iliad :title {:value &quot;The Iliad&quot;}] [:library :the-iliad :author :Homer]]
+&gt; (graphify quads)
+{:library {:the-iliad {:title #{{:value &quot;The Iliad&quot;}}, :author #{:Homer}}}}</code></pre>
+<p>Note that RDFXML format doesn't support named graphs and quads.</p>

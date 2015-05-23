@@ -1,13 +1,13 @@
-<p>
-  That was a strange way to say "three plus three", wasn't it?
-</p>
-
-<p>
-  A Clojure program is made of <em>lists</em>.
-  <code class="expr">(+ 3 3)</code> is a list that contains an operator, and then the operands.
-  Try out the same concept with the <code>*</code> and <code>-</code> operators.
-</p>
-
-<p>
-  Division might surprise you. When you're ready to move forward, try <code class="expr">(/ 10 3)</code>.
-</p>
+<h2 id="tables-to-edn">Tables to EDN</h2>
+<p>A common way to represent tables in Clojure is as a list of maps, with the column names as the keys. Try this:</p>
+<pre><code>&gt; tsv
+&gt; (def lines (string/split-lines tsv))
+&gt; lines
+&gt; (defn split-tabs [s] (string/split s #&quot;\t&quot;))
+&gt; (def table (map split-tabs lines))
+&gt; table
+&gt; (def rows (drop 1 table))
+&gt; rows</code></pre>
+<p>Now we use <code>zipmap</code> to associate keys with values:</p>
+<pre><code>&gt; (def data (map (partial zipmap [:title :author]) rows))
+&gt; data</code></pre>

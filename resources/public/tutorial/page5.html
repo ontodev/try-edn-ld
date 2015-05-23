@@ -1,6 +1,51 @@
-<p>Awesome!</p>
-
-<p>
-  Many Clojure functions can take an arbitrary number of arguments.
-  Try it out: type <code class="expr">(+ 1 2 3 4 5 6)</code> to continue.
-</p>
+<h2 id="prefixes">Prefixes</h2>
+<p>IRIs can be long and cumbersome, so let's define some prefixes that we can use to shorten them:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Prefix</th>
+<th align="left">IRI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>dc</code></td>
+<td align="left"><code>http://purl.org/dc/elements/1.1/</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>ex</code></td>
+<td align="left"><code>http://example.com/</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <code>ex</code> prefix will be our default. We use strings for full IRIs and keywords when we're using some sort of contraction.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">IRI</th>
+<th align="left">Contraction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>http://purl.org/dc/elements/1.1/title</code></td>
+<td align="left"><code>:dc:title</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>http://purl.org/dc/elements/1.1/author</code></td>
+<td align="left"><code>:dc:author</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>http://example.com/the-iliad</code></td>
+<td align="left"><code>:the-iliad</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>http://example.com/Homer</code></td>
+<td align="left"><code>:Homer</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>http://example.com/book</code></td>
+<td align="left"><code>:book</code></td>
+</tr>
+</tbody>
+</table>

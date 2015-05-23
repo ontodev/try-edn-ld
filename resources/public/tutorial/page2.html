@@ -1,7 +1,25 @@
-<p>
-  The first thing you may notice about Clojure is that common operations look... strange.
-</p>
+<h2 id="tables-to-triples">Tables to Triples</h2>
+<p>Say we have a (very small) table of books and their authors called <code>books.tsv</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Title</th>
+<th align="left">Author</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">The Iliad</td>
+<td align="left">Homer</td>
+</tr>
+</tbody>
+</table>
+<p>We want to turn it into a linked data file like <code>books.ttl</code>:</p>
+<pre><code>@prefix dc:    &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix ex:    &lt;http://example.com/&gt; .
+@prefix xsd:   &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix rdf:   &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 
-<p>
-  For example, try typing <code class="expr">(+ 3 3)</code> in the REPL.
-</p>
+ex:the-iliad  a    ex:book ;
+        dc:author  ex:Homer ;
+        dc:title   &quot;The Iliad&quot;^^xsd:string .</code></pre>

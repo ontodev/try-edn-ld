@@ -1,18 +1,12 @@
-# tryclojure
+# Try EDN-LD
 
-TryClojure is a online Clojure REPL written using Noir and Chris Done's jquery console (you're awesome, Chris).
-
-[<img src="https://secure.travis-ci.org/Raynes/tryclojure.png"/>](http://travis-ci.org/Raynes/tryclojure)
+Try EDN-LD is an online Clojure REPL for experimenting with [EDN-LD](https://github.com/ontodev/edn-ld). It is adapted (with gratitude!) from [TryClojure!](http://tryclj.com).
 
 ## Usage
 
-http://tryclj.com
+http://edn-ld.com
 
 To run it locally, use `lein ring server`.
-
-## Credits
-
-apgwoz: Design
 
 ## License
 

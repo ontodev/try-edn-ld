@@ -1,20 +1,7 @@
-<p>Yay! It works!</p>
-
-<p>
-  By now, you probably think that Clojure is very different from the programming languages you already know.
-  Indeed, it belongs to a different family than most popular languages' - the family of "functional" programming languages.
-  Like most functional languages, Clojure can define a function without even giving it a name:
-</p>
-
-<code class="expr">(fn [x] (* x x))</code>
-
-<p>
-  If you run this code, you'll see some cryptic output.
-  In Clojure, functions are just normal values like numbers or strings.
-  <code>fn</code> defines a function and then returns it.
-  What you're seeing is simply what a function looks like when you print it on the screen.
-</p>
-
-<p>
-  But wait - an anonymous function isn't very useful if you can't call it. Try to define a new anonymous function and call it straight away: <code class="expr">((fn [x] (* x x)) 10)</code>.
-</p>
+<h2 id="triples">Triples</h2>
+<p>Now it's time to convert our book data to &quot;triples&quot;, i.e. statements about things to put in our graph. A triple consists of a subject, a predicate, and an object:</p>
+<ul>
+<li>the subject is the name of a resource: an IRI</li>
+<li>the predicate is the name of a relation: also an IRI</li>
+<li>the object can either be an IRI or literal data.</li>
+</ul>
