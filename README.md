@@ -4,7 +4,7 @@ Try EDN-LD is an online Clojure REPL for experimenting with [EDN-LD](https://git
 
 ## Usage
 
-http://edn-ld.com
+http://try.edn-ld.com
 
 To run it locally, use `lein ring server`.
 
