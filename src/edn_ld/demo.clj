@@ -49,10 +49,10 @@
 (def _data (map (partial zipmap [:title :author]) _rows))
 
 (def _context
-  {:dc "http://purl.org/dc/elements/1.1/"
-   :ex "http://example.com/"
-   nil :ex
-   :title :dc:title
+  {:dc     "http://purl.org/dc/elements/1.1/"
+   :ex     "http://example.com/"
+   nil     :ex
+   :title  :dc:title
    :author :dc:author})
 
 (def _resources
@@ -76,3 +76,21 @@
 (def _prefixes (assoc (ld/get-prefixes _context) :rdf rdf :xsd xsd))
 
 (def _expanded-triples (map #(ld/expand-all _context+ %) _triples+))
+
+(def read-triple-string jena/read-triple-string)
+
+(defn write-triple-string
+  "Given an optional format, optional base, optional prefixes, and Triples,
+   return a string representation."
+  ([triples]
+   (write-triple-string default-prefixes triples))
+  ([prefixes triples]
+   (write-triple-string nil prefixes triples))
+  ([format prefixes triples]
+   (write-triple-string format nil prefixes triples))
+  ([format base prefixes triples]
+   (with-open [writer (java.io.StringWriter.)]
+     (.write (jena/get-model prefixes triples) writer format base)
+     (str writer))))
+
+; (write-triple-string _prefixes _expanded-triples)

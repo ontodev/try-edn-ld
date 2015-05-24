@@ -173,9 +173,7 @@ Now, we can write to standard linked data formats, such as Turtle:
 
     > (def prefixes (assoc (get-prefixes context) :rdf rdf :xsd xsd))
     > (def expanded-triples (map #(expand-all context+ %) triples+))
-    > (write-triples "books.ttl" prefixes expanded-triples)
-
-**Oops!** This tutorial runs inside a secure "sandbox", and you can't write files from inside the sandbox.
+    > (write-triple-string prefixes expanded-triples)
 
 
 # Named Graphs
