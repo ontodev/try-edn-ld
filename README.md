@@ -1,5 +1,7 @@
 # Try EDN-LD
 
+[![Build Status](https://travis-ci.org/ontodev/try-edn-ld.svg?branch=master)](https://travis-ci.org/ontodev/try-edn-ld)
+
 Try EDN-LD is an online Clojure REPL for experimenting with [EDN-LD](https://github.com/ontodev/edn-ld). It is adapted (with gratitude!) from [TryClojure!](http://tryclj.com).
 
 ## Usage
