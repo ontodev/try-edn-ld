@@ -169,7 +169,7 @@ We work with these data structures like any other Clojure data, using `merge`, `
     > (def subjects+ (assoc-in subjects [:the-iliad :rdf:type] #{:book}))
     > (def triples+ (conj triples [:the-iliad :rdf:type :book]))
 
-Now, we can write to standard linked data formats, such as Turtle:
+Now, we can write to standard linked data formats, such as RDFXML:
 
     > (def prefixes (assoc (get-prefixes context) :rdf rdf :xsd xsd))
     > (def expanded-triples (map #(expand-all context+ %) triples+))
