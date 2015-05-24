@@ -12,23 +12,16 @@ body {
 }
 
 #header {
-  margin: 20px 0px 20px 190px;
+  margin: 20px 0px 20px 0px;
+  text-align: center;
 }
 
 #header h1 {
-  height: 72px;
-  line-height: 72px;
-  padding: 0px 0px 0px 80px;
   font-weight: normal;
   font-size: 36px;
 }
 
-#header h1 span.logo-try {
-  color: #63b132;
-  display:inline;
-}
-
-#header h1 span.logo-clojure {
+#header h1 {
   color: #2B4A8B;
   display:inline
 }

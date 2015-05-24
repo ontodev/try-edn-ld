@@ -43,11 +43,13 @@
   (html5
    [:head
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
-    (include-css "/css/tryclojure.css"
-                 "/css/gh-fork-ribbon.css")
-    (include-js "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
-                "/javascript/jquery-console/jquery.console.js"
-                "/javascript/tryclojure.js")
+    (include-css
+     "/css/tryclojure.css"
+     "/css/gh-fork-ribbon.css")
+    (include-js
+     "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+     "/javascript/jquery-console/jquery.console.js"
+     "/javascript/tryclojure.js")
     [:title "Try EDN-LD"]]
    [:body
     [:div#wrapper
@@ -56,8 +58,7 @@
          (link-to "https://github.com/ontodev/try-edn-ld" "Fork me on GitHub")]]
      [:div#content
       [:div#header
-       [:h1
-        [:span.logo-clojure "Try EDN-LD!"]]]
+       [:h1 "Try EDN-LD!"]]
       [:div#container
        [:div#console.console]
        [:div#buttons
